@@ -1,12 +1,12 @@
 import pandas as pd
 from sklearn.base import BaseEstimator, ClassifierMixin
 
-"""Preprocessing steps loggically seggregated via their roles
+"""Module for custom preprocessing steps loggically seggregated via their roles
 """
 
 
 def columns_and_indices_cleaning(df: pd.DataFrame) -> pd.DataFrame:
-    """_summary_
+    """columns and indices cleaning for easier data wrangling in the sklearn pipeline later
 
     Args:
         df (pd.DataFrame): dataframe to be processed
@@ -22,9 +22,7 @@ def columns_and_indices_cleaning(df: pd.DataFrame) -> pd.DataFrame:
 
 
 class Cleaning(ClassifierMixin, BaseEstimator):
-    """
-
-    Custom sklearn pipeline object for data cleaning
+    """Custom sklearn pipeline object for data cleaning
 
     explaination of how the cleaning is dones is in eda.ipynb
     Args:

@@ -1,7 +1,7 @@
 import sqlite3
 import pandas as pd
 
-"""sqlite3 wrapper
+"""sqlite3 module
 """
 
 

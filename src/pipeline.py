@@ -10,6 +10,8 @@ from preprocess import FeatureEngineering, Cleaning
 from sklearn.compose import ColumnTransformer
 
 random_state = 0
+"""Pipeline module
+    """
 
 
 def pipeline(
@@ -24,7 +26,11 @@ def pipeline(
         "start_smoking",
         "stop_smoking",
     ]
+    """pipeline
 
+    Returns:
+        dict: Includes model, predictions, various performance metrics
+    """
     categorial_features = list(set(features_names) - set(numerical_features))
     pipeline = Pipeline(
         [

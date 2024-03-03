@@ -5,6 +5,8 @@ from sklearn.svm import SVC
 from pipeline import pipeline
 import pprint
 
+"""Main python script to run the program
+    """
 if __name__ == "__main__":
     df = connection_and_retrieve_data("../data/lung_cancer.db").drop_duplicates()
     df = columns_and_indices_cleaning(df)
