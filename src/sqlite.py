@@ -15,6 +15,7 @@ def connection_and_retrieve_data(path: str) -> pd.DataFrame:
         pd.DataFrame: retrieved DataFrame
     """
     connection = sqlite3.connect(path)
+    print(connection)
     df = pd.read_sql_query("SELECT * FROM lung_cancer", connection)
     connection.close()
     return df
