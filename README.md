@@ -67,13 +67,13 @@ Run `bash run.sh` to start the MLP. your terminal environement should be in a ba
   imputation of missing data
   
 # Choice of models
-Ensemble models can be useful as they are more robust and often able to gain better results
+Ensemble models can be useful as they are more robust and generalised and often able to gain better results than single models like decision trees.These two methods below are very popular.
 
-Random Forest Classifier
+Random Forest Classifier - 
 
-Gradient Boosting Classifier
+Gradient Boosting Classifier - helps improve on the error on the previous tree trained got wrong
 
-Support Vector Decomposition
+Support Vector Mechanism
 # Evaluation of models  
 Classification report from sklearn for the accuracy, f1 scores and other commonly used performance metrics 
 ROC_AUC_score to show classifier performance.  
