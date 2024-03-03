@@ -18,6 +18,7 @@ run.sh
 
 ```
 # Instruction
+open up `run.sh` and replace the line `/home/ryan/Documents/AIAP/aiap16-Ng Guangren, Ryan-S9303680H/data/lung_cancer.db` with a complete path in your system.
 Run `bash run.sh` to start the MLP. your terminal environement should be in a bash to run this programme.
 
 # The logical flow  
@@ -72,7 +73,7 @@ Gradient Boosting Classifier
 
 Support Vector Decomposition
 # Evaluation of models  
-Classification report from sklearn.   
+Classification report from sklearn for the accuracy, f1 scores and other commonly used performance metrics 
 ROC_AUC_score to show classifier performance.  
 Confusion Matrix to show Predicted positives and negatives against true positives and negatives 
 # Other Considerations
