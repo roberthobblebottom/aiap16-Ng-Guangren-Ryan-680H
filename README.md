@@ -67,6 +67,8 @@ Run `bash run.sh` to start the MLP. your terminal environement should be in a ba
   imputation of missing data
   
 # Choice of models
+Ensemble models can be useful as they are more robust and often able to gain better results
+
 Random Forest Classifier
 
 Gradient Boosting Classifier
