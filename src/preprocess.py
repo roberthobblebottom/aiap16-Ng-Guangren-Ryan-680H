@@ -5,7 +5,7 @@ from sklearn.base import BaseEstimator, ClassifierMixin
 """
 
 
-def columns_and_indices_cleaning(df: pd.DataFrame) -> pd.DataFrame:
+def columns_and_indices_names_cleaning(df: pd.DataFrame) -> pd.DataFrame:
     """columns and indices cleaning for easier data wrangling in the sklearn pipeline later
 
     Args:
@@ -37,7 +37,7 @@ class Cleaning(ClassifierMixin, BaseEstimator):
         return self
 
     def transform(self, X, y=None):
-        X.loc[(X.age < 0) | (X.age > 105), "age"] = None
+        X.loc[(X.age < 0) | (X.age > 105), "age"] = "0"
         X.loc[(X.start_smoking.str.len() > 4) | (X.stop_smoking.str.len() > 4)] = "0"
 
         c = ["start_smoking", "stop_smoking", "current_weight", "last_weight"]

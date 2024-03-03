@@ -46,7 +46,7 @@ def pipeline(
                 ),
             ),
             ("standard_scaler", StandardScaler()),
-            ("simple_imputer", SimpleImputer()),
+            ("simple_imputer", SimpleImputer(strategy="Most frequent")),
             ("select_k_best", SelectKBest(10)),  # choosing 10 out of the 13 features
             ("model", model),
         ]
