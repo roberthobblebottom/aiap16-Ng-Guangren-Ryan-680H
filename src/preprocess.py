@@ -25,6 +25,8 @@ class Cleaning(ClassifierMixin, BaseEstimator):
     """
 
     Custom sklearn pipeline object for data cleaning
+
+    explaination of how the cleaning is dones is in eda.ipynb
     Args:
         ClassifierMixin (_type_): _description_
         BaseEstimator (_type_): _description_
@@ -52,6 +54,8 @@ class Cleaning(ClassifierMixin, BaseEstimator):
 class FeatureEngineering(ClassifierMixin, BaseEstimator):
     """Custom sklearn pipeline object for feature engineering
 
+
+    explaination of how the cleaning is dones is in eda.ipynb
     Args:
         ClassifierMixin (class): Mixin class for all classifiers in scikit-learn.
         BaseEstimator (class): Base class for all estimators in scikit-learn.
