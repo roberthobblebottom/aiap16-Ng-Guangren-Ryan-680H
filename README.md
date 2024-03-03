@@ -79,3 +79,6 @@ Classification report from sklearn for the accuracy, f1 scores and other commonl
 ROC_AUC_score to show classifier performance.  
 Confusion Matrix to show Predicted positives and negatives against true positives and negatives 
 # Other Considerations
+the script has been logically seggregated in their own respective module/classes. This is for enhanced readability, maintainability and extensibility   
+
+different dataset may be used in the future, `preprocess.py` should be changed accordingly to the needs of the new datasets' veracity. For example maybe there are more features that has inconsitent categorical values eg, "yes" and "YES" so those have to be done handled in the future. `pipeline.py` may have it's pipeline changed or even user configurable during execution in case a different preprocessing steps are taken.
