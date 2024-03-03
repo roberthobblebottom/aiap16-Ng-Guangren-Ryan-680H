@@ -23,6 +23,7 @@ Run `bash run.sh` to start the MLP. your terminal environement should be in a ba
 # The logical flow  
 <ul>
 <li>connect to db and retrieve data in `pd.DataFrame`.   </li>
+<li>drop duplicated rows</li>
 <li>columns and indices names cleaning   </li>
 <li>Enter into pipeline for Random Forest Classifier, Gradient Boosting Classifier, Support Vector Mechanism from `scikit-learn` library ( or in short sklearn).   </li>
 <li>The pipeline function:  
@@ -51,9 +52,27 @@ Run `bash run.sh` to start the MLP. your terminal environement should be in a ba
 # Overview key findings
   
 # Feature Processing
+  `.db` format is hard to wrangle data with. SQL is not designed for that, that is why it is extracted into pandas DataFrame format for data wrangling.
+  drop duplicated rows because they are the synthetic data from Oversampling as mentioned in the question pape
+  columns names cleaning for easier auto complete and indices
+  Cleaning of data because there are some unconsistent or nonsensical categories (eg. Male and MALE, "RightBoth" to "Both")
+  Some are non smokers or still smoking so those data's start smoking data and stop smoking date should be turned into `0` for easier feature engineering later. types are afterward changed to integer 
+  for easier processing
+  Some ages are seems to be outliers, 0 and 75percentile range to replace outliers with `0`
+  genders have some with "nan", logically it should be replaced with `None` 
+  Feature engineering for weight difference and years of smoking as I think they may be useful for modeling.  
+
+  Standard scaling for normalisation
+  imputation of missing data
   
 # Choice of models
-    
-# Evaluation of models  
+Random Forest Classifier
 
+Gradient Boosting Classifier
+
+Support Vector Decomposition
+# Evaluation of models  
+Classification report from sklearn.   
+ROC_AUC_score to show classifier performance.  
+Confusion Matrix to show Predicted positives and negatives against true positives and negatives 
 # Other Considerations
