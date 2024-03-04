@@ -78,7 +78,7 @@ Random Forest Classifier can help to determine feature importance esily. easier 
 
 Gradient Boosting Classifier - helps improve on the error on the previous tree trained got wrong. More flexible than logistic regression.Histogram variant is used for dataset with more than 10,000 samples as binning can help to speed up the gradient tree boosting through tghe reudction of number of values from continuous range to discrete range  and can evenx improving preformance of the classifier.
 
-Support Vector Mechanism
+Linear Support Vector Mechanism - supports 10k plus data points,  more effective than logistic regression because of the hyperplane seperation.
 # Evaluation of models  
 Classification report from sklearn for the accuracy, f1 scores and other commonly used performance metrics 
 ROC_AUC_score to show classifier performance.  

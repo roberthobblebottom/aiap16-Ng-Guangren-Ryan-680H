@@ -1,7 +1,10 @@
 from sqlite import connection_and_retrieve_data
 from preprocess import columns_and_indices_names_cleaning
-from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier, HistGradientBoostingClassifier
-from sklearn.svm import SVC
+from sklearn.ensemble import (
+    RandomForestClassifier,
+    HistGradientBoostingClassifier,
+)
+from sklearn.svm import LinearSVC
 from pipeline import pipeline
 import pprint
 import sys
@@ -23,6 +26,6 @@ if __name__ == "__main__":
     print("\n\n\n")
 
     print("Support Vector Mechanism:")
-    results = pipeline(SVC(), df.copy())
+    results = pipeline(LinearSVC(), df.copy())
     pprint.pprint(results)
     print("\n\n\n")
