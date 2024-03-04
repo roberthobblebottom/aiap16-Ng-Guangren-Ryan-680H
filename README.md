@@ -18,7 +18,7 @@ run.sh
 
 ```
 # Instruction
-open up `run.sh` and replace the line `/home/ryan/Documents/AIAP/aiap16-Ng Guangren, Ryan-S9303680H/data/lung_cancer.db` with a complete path in your system.
+open up `run.sh` and replace the line `/home/ryan/Documents/AIAP/aiap16-Ng Guangren, Ryan-S9303680H/data/lung_cancer.db` with a complete path as reflected in your system.
 Run `bash run.sh` to start the MLP. your terminal environement should be in a bash to run this programme.
 
 # The logical flow  
@@ -50,28 +50,28 @@ Run `bash run.sh` to start the MLP. your terminal environement should be in a ba
   </li>
 </ul>
 
-# Overview key findings
+# Overview key findings from `eda.ipynb`
   
 # Feature Processing
-  `.db` format is hard to wrangle data with. SQL is not designed for that, that is why it is extracted into pandas DataFrame format for data wrangling.
-  drop duplicated rows because they are the synthetic data from Oversampling as mentioned in the question pape
-  columns names cleaning for easier auto complete and indices
-  Cleaning of data because there are some unconsistent or nonsensical categories (eg. Male and MALE, "RightBoth" to "Both")
-  Some are non smokers or still smoking so those data's start smoking data and stop smoking date should be turned into `0` for easier feature engineering later. types are afterward changed to integer 
-  for easier processing
-  Some ages are seems to be outliers, 0 and 75percentile range to replace outliers with `0`
-  genders have some with "nan", logically it should be replaced with `None` 
-  Feature engineering for weight difference and years of smoking as I think they may be useful for modeling.  
-
-  Standard scaling for normalisation
-  imputation of missing data
+|Feature    |Reason     |
+---|---
+|drop duplicated rows| because they are the synthetic data from Oversampling as mentioned in the question paper. |
+|columns names cleaning| for easier auto complete and indices|
+|Cleaning of data| there are some unconsistent or nonsensical categories (eg. Male and MALE, "RightBoth" to "Both")|
+|non year data to "0" and these features types is changed to int| Some are non smokers or still smoking so those data's start smoking data and stop smoking date should be turned into `0` instead of `Not Applicable` or `Still Smoking` for easier feature engineering later. for easier processing
+ | Replace outliers with 0 in age| Some ages are seems to be outliers, 0 value point and 75 percentile range to replace outliers with `0`
+ |Replacing gender `"nan"` string with `None`| genders have some with "nan", logically it should be replaced with `None` 
+|Feature engineering for weight difference and years of smoking| as  they may be useful for modeling.  
+ | Standard scaling |for normalisation
+ | imputation |of missing data as shown in the `eda.ipynb`
+ |SelectKBest| for features and label based, supervised feature selections for the reduction of dimensions to mitigate dimension reduction
   
 # Choice of models
-Ensemble models can be useful as they are more robust and generalised and often able to gain better results than single models like decision trees.These two methods below are very popular.
+Ensemble models can be useful as they are more robust and generalised and often able to gain better results over single estimators like decision trees. These two methods below are very popular.
 
-Random Forest Classifier - 
+Random Forest Classifier can help to determine feature importance esily. easier to tun than gradient boosting, harder to overfit than gradient boosting.
 
-Gradient Boosting Classifier - helps improve on the error on the previous tree trained got wrong
+Gradient Boosting Classifier - helps improve on the error on the previous tree trained got wrong. More flexible than logistic regression.Histogram variant is used for dataset with more than 10,000 samples as binning can help to speed up the gradient tree boosting through tghe reudction of number of values from continuous range to discrete range  and can evenx improving preformance of the classifier.
 
 Support Vector Mechanism
 # Evaluation of models  
@@ -79,6 +79,6 @@ Classification report from sklearn for the accuracy, f1 scores and other commonl
 ROC_AUC_score to show classifier performance.  
 Confusion Matrix to show Predicted positives and negatives against true positives and negatives 
 # Other Considerations
-the script has been logically seggregated in their own respective module/classes. This is for enhanced readability, maintainability and extensibility   
+the script has been logically seggregated in their own respective module/classes. This is for enhanced readability, maintainability and extensibility.  
 
 different dataset may be used in the future, `preprocess.py` should be changed accordingly to the needs of the new datasets' veracity. For example maybe there are more features that has inconsitent categorical values eg, "yes" and "YES" so those have to be done handled in the future. `pipeline.py` may have it's pipeline changed or even user configurable during execution in case a different preprocessing steps are taken.

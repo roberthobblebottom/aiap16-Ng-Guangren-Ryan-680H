@@ -1,6 +1,6 @@
 from sqlite import connection_and_retrieve_data
 from preprocess import columns_and_indices_names_cleaning
-from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier, HistGradientBoostingClassifier
 from sklearn.svm import SVC
 from pipeline import pipeline
 import pprint
@@ -18,7 +18,7 @@ if __name__ == "__main__":
     print("\n\n\n")
 
     print("Gradient Boosting Classifier:")
-    results = pipeline(GradientBoostingClassifier(), df.copy())
+    results = pipeline(HistGradientBoostingClassifier(), df.copy())
     pprint.pprint(results)
     print("\n\n\n")
 
