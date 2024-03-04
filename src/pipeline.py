@@ -40,7 +40,7 @@ def pipeline(
                 "column_encoders",
                 ColumnTransformer(
                     [
-                        ("categoria_encoder", OrdinalEncoder(), categorial_features),
+                        ("categorial_encoder", OrdinalEncoder(), categorial_features),
                         ("passthrough", "passthrough", numerical_features),
                     ]
                 ),

@@ -61,7 +61,7 @@ Run `bash run.sh` to start the MLP. your terminal environement should be in a ba
 |non year data to "0" and these features types is changed to int| Some are non smokers or still smoking so those data's start smoking data and stop smoking date should be turned into `0` instead of `Not Applicable` or `Still Smoking` for easier feature engineering later. for easier processing
  | Replace outliers with 0 in age| Some ages are seems to be outliers, 0 value point and 75 percentile range to replace outliers with `0`
  |Replacing gender `"nan"` string with `None`| genders have some with "nan", logically it should be replaced with `None` 
-|Feature engineering for weight difference and years of smoking| as  they may be useful for modeling.  
+|Feature engineering for weight difference and has_history_of_smoking| as  they may be useful for modeling.  
  | Standard scaling |for normalisation
  | imputation |of missing data as shown in the `eda.ipynb`
  |SelectKBest| for features and label based, supervised feature selections for the reduction of dimensions to mitigate dimension reduction

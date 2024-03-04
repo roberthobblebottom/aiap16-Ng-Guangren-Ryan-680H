@@ -69,7 +69,7 @@ class FeatureEngineering(ClassifierMixin, BaseEstimator):
         X["weight_difference"] = X.current_weight - X.last_weight
 
         X["start_smoking_numerical"] = X.loc[
-            X["start_smoking"] != 0, "start_smoking"
+        X["start_smoking"] != 0, "start_smoking"
         ].astype("int64")
         X["stop_smoking_numerical"] = X.loc[
             X["stop_smoking"] != 0, "stop_smoking"
@@ -77,6 +77,11 @@ class FeatureEngineering(ClassifierMixin, BaseEstimator):
         X["years_of_smoking"] = (
             X.stop_smoking_numerical - X.start_smoking_numerical
         ).fillna(0)
+
+
+        X.loc[X.years_of_smoking >0, "has_history_of_smoking"] = True
+        X.loc[X.years_of_smoking<=0,"has_history_of_smoking"] = False
+        
         X.drop(
             ["start_smoking_numerical", "stop_smoking_numerical"], axis=1, inplace=True
         )
