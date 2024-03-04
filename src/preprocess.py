@@ -66,7 +66,7 @@ class FeatureEngineering(ClassifierMixin, BaseEstimator):
         return self
 
     def transform(self, X, y=None):
-        X["weight_difference"] = X.current_weight - X.last_weight
+        # X["weight_difference"] = X.current_weight - X.last_weight
 
         X["start_smoking_numerical"] = X.loc[
         X["start_smoking"] != 0, "start_smoking"
@@ -83,6 +83,6 @@ class FeatureEngineering(ClassifierMixin, BaseEstimator):
         X.loc[X.years_of_smoking<=0,"has_history_of_smoking"] = False
         
         X.drop(
-            ["start_smoking_numerical", "stop_smoking_numerical"], axis=1, inplace=True
+            ["start_smoking_numerical", "stop_smoking_numerical","years_of_smoking"], axis=1, inplace=True
         )
         return X
